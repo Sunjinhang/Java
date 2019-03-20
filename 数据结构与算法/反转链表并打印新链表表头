@@ -1,0 +1,31 @@
+```java
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        ListNode node = null;
+        ListNode newHead = null;
+        ListNode  pNode = head;
+        
+        if(head == null){
+            return null;
+        }
+        while(pNode != null){
+            ListNode nextNode =  pNode.next;
+            if(nextNode == null){
+                newHead = pNode;
+            }
+            pNode.next = node;
+            node = pNode;
+            pNode = nextNode;    
+        }
+        return newHead;
+    }
+}
