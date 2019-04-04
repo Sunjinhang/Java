@@ -1,0 +1,59 @@
+```java
+
+//define binarytree
+class TreeNode {
+	int val;
+	TreeNode left;
+	TreeNode right;
+	
+	public TreeNode(int x) {
+		this.val = x;
+	}
+}
+
+
+public class BinaryTreeSearch {
+	
+	//前序遍历
+	public void preSearch(TreeNode node) {
+		if(node != null)
+		{
+			System.out.println(node.val);
+			
+			//递归执行前序遍历
+			preSearch(node.left);
+			preSearch(node.right);
+		}
+	}
+	
+	//中序遍历
+	public void midSearch(TreeNode node) {
+		if(node != null)
+		{
+			//递归执行中序遍历
+			midSearch(node.left);
+			
+			System.out.println(node.val);
+			
+			//递归执行中序遍历
+			midSearch(node.right);
+		}
+	}
+	
+	//后序遍历
+	public void LastSearch(TreeNode node) {
+		if(node != null)
+		{
+			//递归执行后序遍历
+			midSearch(node.left);
+			midSearch(node.right);
+			
+			System.out.println(node.val);
+			
+			
+		}
+	}
+		
+
+}
+
